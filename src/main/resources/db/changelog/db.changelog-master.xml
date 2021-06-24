@@ -1,0 +1,41 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="jmix-demo-3">
+
+        <createTable tableName="USER_">
+            <column name="ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="USER_NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="varchar(255)"/>
+            <column name="LAST_NAME" type="varchar(255)"/>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="2" author="jmix-demo-3">
+        <createIndex indexName="IDX_USER__ON_USERNAME"
+                     tableName="USER_" unique="true">
+            <column name="USER_NAME"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="3" author="jmix-demo-3">
+
+        <insert tableName="USER_">
+            <column name="ID" value="1"/>
+            <column name="USER_NAME" value="admin"/>
+            <column name="FIRST_NAME" value="Admin"/>
+            <column name="LAST_NAME" value="Admin"/>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>
