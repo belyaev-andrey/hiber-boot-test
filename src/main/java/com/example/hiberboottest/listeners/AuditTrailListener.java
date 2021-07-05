@@ -1,5 +1,8 @@
-package com.example.hiberboottest;
+package com.example.hiberboottest.listeners;
 
+import com.example.hiberboottest.logger.ConsoleLogger;
+import com.example.hiberboottest.User;
+import com.example.hiberboottest.logger.UserLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +12,7 @@ import javax.persistence.*;
 public class AuditTrailListener {
 
     @Autowired
-    private ConsoleLogger consoleLogger;
+    private UserLogger consoleLogger;
 
     @PrePersist
     @PreUpdate

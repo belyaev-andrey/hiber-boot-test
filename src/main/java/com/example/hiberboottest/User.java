@@ -1,7 +1,6 @@
 package com.example.hiberboottest;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.example.hiberboottest.listeners.AuditTrailListener;
 
 import javax.persistence.*;
 
@@ -11,7 +10,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String userName;
@@ -59,4 +58,5 @@ public class User {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
 }

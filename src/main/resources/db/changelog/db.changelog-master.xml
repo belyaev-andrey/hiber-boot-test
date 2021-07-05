@@ -7,7 +7,7 @@
     <changeSet id="1" author="jmix-demo-3">
 
         <createTable tableName="USER_">
-            <column name="ID" type="int">
+            <column name="ID" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="USER_NAME" type="varchar(255)">
